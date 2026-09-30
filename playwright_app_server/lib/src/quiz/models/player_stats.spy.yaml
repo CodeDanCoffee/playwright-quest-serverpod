@@ -1,0 +1,14 @@
+### Aggregated game stats for a player.
+class: PlayerStats
+table: player_stats
+fields:
+  authUser: module:serverpod_auth_core:AuthUser?, relation(onDelete=Cascade)
+  xp: int, default=0
+  ### Consecutive days (UTC) with at least one finished lesson.
+  currentStreak: int, default=0
+  longestStreak: int, default=0
+  lastPlayedAt: DateTime?
+indexes:
+  player_stats_user_idx:
+    fields: authUserId
+    unique: true

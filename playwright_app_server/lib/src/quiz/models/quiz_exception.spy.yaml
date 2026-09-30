@@ -1,0 +1,5 @@
+### Thrown when a quiz request cannot be fulfilled (unknown or locked lesson,
+### malformed answers).
+exception: QuizException
+fields:
+  message: String

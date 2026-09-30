@@ -1,0 +1,20 @@
+### A pending one-time sign-in code for passwordless email login.
+###
+### At most one code is active per email. The code itself is never stored,
+### only a keyed hash of it.
+class: EmailLoginCode
+serverOnly: true
+table: email_login_code
+fields:
+  ### Lower-cased email address the code was sent to.
+  email: String
+  ### HMAC-SHA256 of the code, keyed with the server's hash pepper.
+  codeHash: String
+  createdAt: DateTime
+  expiresAt: DateTime
+  ### Number of wrong guesses so far.
+  failedAttempts: int, default=0
+indexes:
+  email_login_code_email_idx:
+    fields: email
+    unique: true

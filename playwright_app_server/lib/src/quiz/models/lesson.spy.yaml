@@ -1,0 +1,22 @@
+### A lesson: a short concept card followed by a quiz.
+class: Lesson
+fields:
+  ### Stable identifier, e.g. `b1`.
+  id: String
+  tierId: String
+  ### Position in the overall learning path (0-based).
+  order: int
+  title: String
+  ### One-line teaser shown on the map.
+  summary: String
+  ### Title of the concept card shown before the quiz.
+  conceptTitle: String
+  ### Body of the concept card, in plain text with paragraphs.
+  conceptBody: String
+  ### Example code for the concept card.
+  conceptCode: String?
+  ### A practical tip to take into real projects.
+  proTip: String?
+  questionCount: int
+  ### Only included when a single lesson is fetched.
+  questions: List<Question>?

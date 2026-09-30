@@ -1,0 +1,45 @@
+name: Tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      VERSION: '4.0.0'
+      SERVERPOD_PASSWORD_database: '8gg3QNtI_nk4U0KKcrvRRwlT7bp4RJjV'
+      SERVERPOD_PASSWORD_redis: 'UDI6pjx-4SUn4AqrETFE7ni_w2q3hqBV'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.44.4'
+
+      - name: Start containers
+        working-directory: playwright_app_server
+        run: docker compose up --quiet-pull --build -d
+
+      - name: Install dependencies
+        run: flutter pub get
+
+      - name: Install Serverpod CLI
+        run: dart install serverpod_cli $VERSION
+
+      - name: Run Serverpod generator
+        working-directory: playwright_app_server
+        run: serverpod generate
+
+      - name: Run tests
+        working-directory: playwright_app_server
+        run: dart test
+
+      - name: Stop containers
+        if: always()
+        working-directory: playwright_app_server
+        run: docker compose down -v

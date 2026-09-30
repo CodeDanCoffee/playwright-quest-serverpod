@@ -1,0 +1,4 @@
+### Thrown by the passwordless email sign-in endpoint.
+exception: EmailCodeLoginException
+fields:
+  reason: EmailCodeErrorReason

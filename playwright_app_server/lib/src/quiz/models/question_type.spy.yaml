@@ -1,0 +1,6 @@
+### The style of a quiz question, used by the app to label and render it.
+enum: QuestionType
+values:
+  - multipleChoice
+  - trueFalse
+  - fillTheBlank

@@ -1,0 +1,7 @@
+### Everything the app needs to render the player's journey.
+class: PlayerProgress
+fields:
+  stats: PlayerStats
+  lessons: List<LessonProgress>
+  ### Ids of lessons the player may play.
+  unlockedLessonIds: List<String>

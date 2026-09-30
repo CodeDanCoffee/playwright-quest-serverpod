@@ -1,0 +1,6 @@
+### The result of a successful passwordless sign-in.
+class: EmailCodeSignIn
+fields:
+  authSuccess: module:serverpod_auth_core:AuthSuccess
+  ### True when this sign-in created the account.
+  isNewUser: bool

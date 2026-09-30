@@ -1,0 +1,11 @@
+name: _
+publish_to: none
+
+environment:
+  sdk: '^3.12.2'
+
+workspace:
+  - playwright_app_client
+  - playwright_app_server
+  - playwright_app_flutter
+

@@ -1,0 +1,8 @@
+### Why a passwordless email sign-in step failed.
+enum: EmailCodeErrorReason
+values:
+  - invalidEmail
+  - tooManyRequests
+  - invalidCode
+  - expired
+  - tooManyAttempts

@@ -1,0 +1,18 @@
+### A single quiz question in a lesson.
+class: Question
+fields:
+  ### Stable identifier, e.g. `b1-q3`.
+  id: String
+  type: QuestionType
+  ### The question text.
+  prompt: String
+  ### Optional code snippet shown with the question. `____` marks a blank.
+  code: String?
+  ### The answer options.
+  options: List<String>
+  ### Index into [options] of the correct answer.
+  correctIndex: int
+  ### Why the answer is correct, shown after answering.
+  explanation: String
+  ### An optional nudge shown when the player asks for a hint.
+  hint: String?

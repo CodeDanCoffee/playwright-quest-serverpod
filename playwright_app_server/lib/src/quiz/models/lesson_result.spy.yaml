@@ -1,0 +1,12 @@
+### The outcome of submitting a finished lesson.
+class: LessonResult
+fields:
+  lessonId: String
+  correct: int
+  total: int
+  stars: int
+  xpEarned: int
+  isNewBest: bool
+  ### The lesson unlocked by this attempt, if any.
+  unlockedLessonId: String?
+  stats: PlayerStats

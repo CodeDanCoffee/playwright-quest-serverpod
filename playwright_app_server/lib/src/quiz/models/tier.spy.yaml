@@ -1,0 +1,11 @@
+### A difficulty tier (Beginner to Expert) grouping several lessons.
+class: Tier
+fields:
+  id: String
+  order: int
+  ### e.g. `Beginner`.
+  difficulty: String
+  ### Theatrical name, e.g. `Act I · Rehearsal`.
+  title: String
+  description: String
+  lessons: List<Lesson>
