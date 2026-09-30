@@ -425,11 +425,8 @@ class _Header extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(28, 44, 28, 0),
       child: Column(
         children: [
-          Image.asset(
-            'assets/images/logo.png',
-            width: 112,
-            semanticLabel: 'Playwright Quest logo',
-          ),
+          const QuestLogo(size: 104),
+          const SizedBox(height: 14),
           Text(
             'Playwright Quest',
             textAlign: TextAlign.center,

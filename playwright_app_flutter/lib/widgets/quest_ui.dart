@@ -194,3 +194,34 @@ class QuestBackground extends StatelessWidget {
     );
   }
 }
+
+/// The Playwright Quest app-icon tile, with a soft shadow so its pale edge
+/// stays visible on the pale page backgrounds.
+class QuestLogo extends StatelessWidget {
+  const QuestLogo({super.key, required this.size});
+
+  final double size;
+
+  @override
+  Widget build(BuildContext context) {
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        // Matches the squircle corners baked into the image.
+        borderRadius: BorderRadius.circular(size * 0.24),
+        boxShadow: [
+          BoxShadow(
+            color: QuestColors.ink.withValues(alpha: 0.14),
+            blurRadius: size * 0.18,
+            offset: Offset(0, size * 0.06),
+          ),
+        ],
+      ),
+      child: Image.asset(
+        'assets/images/logo.png',
+        width: size,
+        height: size,
+        semanticLabel: 'Playwright Quest logo',
+      ),
+    );
+  }
+}

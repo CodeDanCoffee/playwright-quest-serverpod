@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="playwright_app_flutter"
+        android:label="Playwright Quest"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

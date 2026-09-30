@@ -134,12 +134,7 @@ class _Header extends StatelessWidget {
       padding: const EdgeInsets.only(top: 40),
       child: Row(
         children: [
-          Image.asset(
-            'assets/images/logo.png',
-            width: 36,
-            height: 36,
-            semanticLabel: 'Playwright Quest logo',
-          ),
+          const QuestLogo(size: 36),
           const SizedBox(width: 8),
           Expanded(
             child: Text(
@@ -918,7 +913,7 @@ class _ErrorView extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Image.asset('assets/images/logo.png', width: 64, height: 64),
+            const QuestLogo(size: 64),
             const SizedBox(height: 12),
             Text('The show is delayed', style: Stage.display(26)),
             const SizedBox(height: 8),
