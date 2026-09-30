@@ -29,15 +29,23 @@ jobs:
         run: flutter pub get
 
       - name: Install Serverpod CLI
-        run: dart install serverpod_cli $VERSION
+        run: |
+          dart pub global activate serverpod_cli $VERSION
+          echo "$HOME/.pub-cache/bin" >> "$GITHUB_PATH"
 
       - name: Run Serverpod generator
         working-directory: playwright_app_server
         run: serverpod generate
 
+      # config/passwords.yaml is not in the repo, so give the test run its
+      # own throwaway secrets for sign-in tokens and code hashing.
       - name: Run tests
         working-directory: playwright_app_server
-        run: dart test
+        run: |
+          export SERVERPOD_PASSWORD_emailSecretHashPepper="$(openssl rand -hex 24)"
+          export SERVERPOD_PASSWORD_jwtHmacSha512PrivateKey="$(openssl rand -hex 32)"
+          export SERVERPOD_PASSWORD_jwtRefreshTokenHashPepper="$(openssl rand -hex 24)"
+          dart test
 
       - name: Stop containers
         if: always()
