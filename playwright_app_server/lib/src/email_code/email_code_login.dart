@@ -174,9 +174,18 @@ abstract final class EmailCodeLogin {
   }
 
   static String _hash(String email, String code) {
-    final pepper =
-        Serverpod.instance.getPassword('emailSecretHashPepper') ??
-        'development-only-pepper';
+    var pepper = Serverpod.instance.getPassword('emailSecretHashPepper');
+    if (pepper == null) {
+      final runMode = Serverpod.instance.runMode;
+      if (runMode != ServerpodRunMode.development &&
+          runMode != ServerpodRunMode.test) {
+        // Never fall back to a known value on a real server.
+        throw StateError(
+          'The emailSecretHashPepper password must be set in $runMode.',
+        );
+      }
+      pepper = 'development-only-pepper';
+    }
     return Hmac(
       sha256,
       utf8.encode(pepper),

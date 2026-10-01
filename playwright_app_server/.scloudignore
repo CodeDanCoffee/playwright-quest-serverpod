@@ -1,0 +1,6 @@
+# Serverpod Cloud deploy exclusions (same syntax as .gitignore).
+#
+# .gitignore excludes web/app, but that is where the `flutter_build`
+# pre-deploy hook puts the Flutter web build, so ship it to Cloud.
+!web/app/
+!web/app/**
