@@ -9,6 +9,8 @@
 Bite-sized lessons and quizzes that teach you Playwright, one scene at a time.
 No automation experience needed.
 
+**[Try it live → playwright-quest.serverpod.space](https://playwright-quest.serverpod.space)**
+
 </div>
 
 ---
@@ -34,9 +36,16 @@ Playwright Quest breaks it into a path you can finish on the bus:
 Everything you learn maps to code you will actually write: locators, web-first
 assertions, fixtures, network mocking, login state, CI and more.
 
+## Try it
+
+The app is live at **https://playwright-quest.serverpod.space**, hosted on
+[Serverpod Cloud](https://serverpod.dev/cloud). Sign in with any email address:
+you'll receive a 6-digit code by email, and your first sign-in creates your
+account. It works on phones and desktop browsers.
+
 ## Getting started
 
-You need [Flutter](https://docs.flutter.dev/get-started/install) 3.44+ and the
+To run it on your own machine, you need [Flutter](https://docs.flutter.dev/get-started/install) 3.44+ and the
 Serverpod CLI.
 
 ```bash
@@ -91,7 +100,9 @@ got right.
 - **[Serverpod](https://serverpod.dev)** runs the backend: the curriculum, the
   game rules, progress and sign-in, all in Dart with a PostgreSQL database.
 - **[Flutter](https://flutter.dev)** runs the app, designed mobile-first and
-  served on the web during development.
+  built for the web.
+- **[Serverpod Cloud](https://serverpod.dev/cloud)** hosts the live server,
+  database and web app; database migrations are applied on every deploy.
 
 ```
 playwright_app_server/   Serverpod backend: lessons, game rules, sign-in, tests
