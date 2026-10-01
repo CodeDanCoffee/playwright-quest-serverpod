@@ -106,4 +106,4 @@ content for mistakes.
 
 <sub>Playwright Quest is an independent learning project and is not affiliated
 with or endorsed by Microsoft or the Playwright project. The Playwright name
-and logo belong to their owners.</sub>
+belongs to its owners; the Playwright Quest logo is original artwork.</sub>
