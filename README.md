@@ -41,7 +41,8 @@ assertions, fixtures, network mocking, login state, CI and more.
 The app is live at **https://playwright-quest.serverpod.space**, hosted on
 [Serverpod Cloud](https://serverpod.dev/cloud). Sign in with any email address:
 you'll receive a 6-digit code by email, and your first sign-in creates your
-account. It works on phones and desktop browsers.
+account. If the code isn't in your inbox within a minute, check your spam or
+junk folder. It works on phones and desktop browsers.
 
 ## Getting started
 
